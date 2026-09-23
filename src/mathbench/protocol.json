@@ -1,0 +1,37 @@
+{
+  "aggregation": {
+    "fixed_denominator": true,
+    "infrastructure_failure": "pending_declared_rerun",
+    "invalid_submission_score": 0,
+    "missing_agent_result_score": 0
+  },
+  "execution": {
+    "candidate_runs_in_disposable_workspace": true,
+    "local_untrusted_execution": false,
+    "network": "disabled",
+    "private_evaluator_outside_agent_view": true
+  },
+  "frozen": true,
+  "math": {
+    "agent_view_policy": {
+      "evaluator_binding_required": true,
+      "feedback_release": "after_complete_family_submission_is_frozen",
+      "opaque_instance_ids": true,
+      "secret_shuffle_required": true,
+      "whitelist_projection_required": true
+    },
+    "benchmark": "constraint-shift-math",
+    "family_strict_pass_weight": 0.3,
+    "format_policy": "fail_closed_no_separate_points",
+    "item_pass_weight": 0.7,
+    "primary_sampling_metric": "pass_at_1",
+    "public_dev_role": "smoke_only_not_leaderboard",
+    "scored_tracks": [
+      "static_hidden",
+      "fresh_private"
+    ],
+    "split_unit": "family_id"
+  },
+  "protocol_id": "new-benchmarks-v0.2",
+  "schema_version": 1
+}

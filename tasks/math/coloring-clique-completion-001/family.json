@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "benchmark": "constraint-shift-math",
+  "family_id": "coloring-clique-completion-001",
+  "title": "Three-coloring boundary completed to a four-clique",
+  "domain": "graph_theory",
+  "track": "public_dev",
+  "generator": {
+    "id": "coloring-phase-templates",
+    "version": "1.0.0",
+    "template": "coloring-clique-completion-001"
+  },
+  "submission_contract": {
+    "top_level_fields": [
+      "instance_id",
+      "verdict",
+      "answer",
+      "certificate"
+    ],
+    "classify_feasible": {
+      "verdict": "feasible",
+      "answer": {
+        "coloring": {
+          "vertex": "integer in 1..k"
+        }
+      },
+      "certificate": {}
+    },
+    "classify_infeasible": {
+      "verdict": "infeasible",
+      "answer": {},
+      "certificate_one_of": [
+        {
+          "type": "clique",
+          "vertices": [
+            "vertex"
+          ]
+        },
+        {
+          "type": "odd_cycle",
+          "cycle": [
+            "cyclically ordered vertex"
+          ]
+        },
+        {
+          "type": "odd_wheel",
+          "hub": "vertex",
+          "rim": [
+            "cyclically ordered vertex"
+          ]
+        }
+      ]
+    },
+    "optimize": {
+      "verdict": "optimal",
+      "answer": {
+        "coloring": {
+          "vertex": "integer"
+        },
+        "colors_used": "positive integer"
+      },
+      "certificate": "one obstruction above whose lower bound equals colors_used"
+    },
+    "additional_fields": false
+  },
+  "scoring": {
+    "correctness_weight": 70,
+    "all_correct_bonus": 30
+  },
+  "instances": [
+    {
+      "id": "coloring-clique-completion-001-a",
+      "variant": "base_feasible",
+      "validator": "graph_coloring_v1",
+      "goal": "classify_k_coloring",
+      "statement": "Classify k-colorability and return either a coloring or the specified structural obstruction.",
+      "input": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "c",
+            "d"
+          ]
+        ],
+        "k": 3
+      }
+    },
+    {
+      "id": "coloring-clique-completion-001-b",
+      "variant": "nearby_feasible",
+      "validator": "graph_coloring_v1",
+      "goal": "classify_k_coloring",
+      "statement": "Classify k-colorability and return either a coloring or the specified structural obstruction.",
+      "input": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "b",
+            "d"
+          ],
+          [
+            "c",
+            "d"
+          ]
+        ],
+        "k": 3
+      }
+    },
+    {
+      "id": "coloring-clique-completion-001-c",
+      "variant": "boundary_infeasible",
+      "validator": "graph_coloring_v1",
+      "goal": "classify_k_coloring",
+      "statement": "Classify k-colorability and return either a coloring or the specified structural obstruction.",
+      "input": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "a",
+            "d"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "b",
+            "d"
+          ],
+          [
+            "c",
+            "d"
+          ]
+        ],
+        "k": 3
+      }
+    },
+    {
+      "id": "coloring-clique-completion-001-d",
+      "variant": "optimal_certificate",
+      "validator": "graph_coloring_v1",
+      "goal": "minimum_coloring",
+      "statement": "Find a minimum coloring and certify a matching structural lower bound.",
+      "input": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "a",
+            "d"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "b",
+            "d"
+          ],
+          [
+            "c",
+            "d"
+          ]
+        ],
+        "k": 3
+      }
+    }
+  ]
+}

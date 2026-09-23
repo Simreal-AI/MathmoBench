@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "constraint-shift-math"
+version = "0.2.0"
+description = "MathmoBench: certificate-graded constraint-shift math benchmark"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Simreal-AI/MathmoBench"
+Changelog = "https://github.com/Simreal-AI/MathmoBench/blob/main/CHANGELOG.md"
+
+[project.scripts]
+mathbench = "mathbench.cli:main"
+mathbench-generate = "mathbench.generator_cli:main"
+mathbench-export = "mathbench.projection_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mathbench = ["protocol.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

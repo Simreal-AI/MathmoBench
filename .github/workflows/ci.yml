@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Integrity check and unit tests
+        run: python verify.py --run-tests
+      - name: Package install smoke test
+        run: |
+          python -m pip install .
+          mathbench tasks/math/matching-shift-001/family.json examples/math-perfect.jsonl

@@ -1,0 +1,109 @@
+{
+  "benchmark": "constraint-shift-math",
+  "catalog_id": "new-benchmarks-dev-v0.2:constraint-shift-math:v0.2",
+  "entries": [
+    {
+      "id": "coloring-clique-completion-001",
+      "kind": "math_family",
+      "path": "tasks/math/coloring-clique-completion-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "coloring-odd-cycle-closure-001",
+      "kind": "math_family",
+      "path": "tasks/math/coloring-odd-cycle-closure-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "coloring-odd-wheel-closure-001",
+      "kind": "math_family",
+      "path": "tasks/math/coloring-odd-wheel-closure-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "matching-shift-001",
+      "kind": "math_family",
+      "path": "tasks/math/matching-shift-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "packing-balanced-load-001",
+      "kind": "math_family",
+      "path": "tasks/math/packing-balanced-load-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "packing-incompatibility-001",
+      "kind": "math_family",
+      "path": "tasks/math/packing-incompatibility-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "packing-total-capacity-001",
+      "kind": "math_family",
+      "path": "tasks/math/packing-total-capacity-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "subset-modular-break-001",
+      "kind": "math_family",
+      "path": "tasks/math/subset-modular-break-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "subset-pair-pivot-001",
+      "kind": "math_family",
+      "path": "tasks/math/subset-pair-pivot-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    },
+    {
+      "id": "subset-superincreasing-gap-001",
+      "kind": "math_family",
+      "path": "tasks/math/subset-superincreasing-gap-001/family.json",
+      "rights": {
+        "origin": "project_original_fixture",
+        "release_decision": "development_only"
+      },
+      "track": "public_dev"
+    }
+  ],
+  "frozen": true,
+  "schema_version": 1,
+  "source_catalog_sha256": "fd17f9f7e9534991a4b0073b7ea46695d9d457eb81806e18e9a11aadedf36bc7"
+}

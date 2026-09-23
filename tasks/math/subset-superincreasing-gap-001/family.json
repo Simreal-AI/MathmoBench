@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "benchmark": "constraint-shift-math",
+  "family_id": "subset-superincreasing-gap-001",
+  "title": "Exact subset boundary in a sparse superincreasing-style system",
+  "domain": "discrete_optimization",
+  "track": "public_dev",
+  "generator": {
+    "id": "subset-sum-phase-templates",
+    "version": "2.0.0",
+    "template": "subset-superincreasing-gap-001"
+  },
+  "submission_contract": {
+    "top_level_fields": [
+      "instance_id",
+      "verdict",
+      "answer",
+      "certificate"
+    ],
+    "indexing": "zero_based",
+    "classify_feasible": {
+      "verdict": "feasible",
+      "answer": {
+        "indices": [
+          "integer"
+        ]
+      },
+      "certificate": {}
+    },
+    "classify_infeasible": {
+      "verdict": "infeasible",
+      "answer": {},
+      "certificate_one_of": [
+        {
+          "type": "common_divisor",
+          "divisor": "integer > 1 dividing every number"
+        },
+        {
+          "type": "superincreasing_greedy",
+          "remainder": "positive greedy remainder"
+        }
+      ]
+    },
+    "optimize": {
+      "verdict": "optimal",
+      "answer": {
+        "indices": [
+          "integer"
+        ],
+        "distance": "nonnegative integer"
+      },
+      "certificate_one_of": [
+        {
+          "type": "common_divisor",
+          "divisor": "integer > 1 dividing every number"
+        },
+        {
+          "type": "superincreasing_greedy",
+          "remainder": "nonnegative greedy remainder"
+        }
+      ]
+    },
+    "additional_fields": false
+  },
+  "scoring": {
+    "correctness_weight": 70,
+    "all_correct_bonus": 30
+  },
+  "instances": [
+    {
+      "id": "subset-superincreasing-gap-001-a",
+      "variant": "base_feasible",
+      "validator": "subset_sum_v1",
+      "goal": "classify_exact_subset",
+      "statement": "Classify exact subset-sum feasibility; use zero-based item indices or a short structural certificate.",
+      "input": {
+        "numbers": [
+          1,
+          5,
+          11,
+          22
+        ],
+        "target": 17
+      }
+    },
+    {
+      "id": "subset-superincreasing-gap-001-b",
+      "variant": "nearby_feasible",
+      "validator": "subset_sum_v1",
+      "goal": "classify_exact_subset",
+      "statement": "Classify exact subset-sum feasibility; use zero-based item indices or a short structural certificate.",
+      "input": {
+        "numbers": [
+          1,
+          5,
+          11,
+          23
+        ],
+        "target": 17
+      }
+    },
+    {
+      "id": "subset-superincreasing-gap-001-c",
+      "variant": "boundary_infeasible",
+      "validator": "subset_sum_v1",
+      "goal": "classify_exact_subset",
+      "statement": "Classify exact subset-sum feasibility; use zero-based item indices or a short structural certificate.",
+      "input": {
+        "numbers": [
+          2,
+          5,
+          11,
+          23
+        ],
+        "target": 17
+      }
+    },
+    {
+      "id": "subset-superincreasing-gap-001-d",
+      "variant": "optimal_certificate",
+      "validator": "subset_sum_v1",
+      "goal": "closest_subset",
+      "statement": "Find a subset with minimum absolute distance from the target and certify it structurally.",
+      "input": {
+        "numbers": [
+          2,
+          5,
+          11,
+          23
+        ],
+        "target": 17
+      }
+    }
+  ]
+}

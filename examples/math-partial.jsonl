@@ -1,0 +1,4 @@
+{"instance_id":"matching-shift-001-a","verdict":"feasible","answer":{"matching":[["1","A"],["2","B"],["3","C"],["4","D"]]},"certificate":{}}
+{"instance_id":"matching-shift-001-b","verdict":"feasible","answer":{"matching":[["1","A"],["2","B"],["3","C"],["4","D"]]},"certificate":{}}
+{"instance_id":"matching-shift-001-c","verdict":"feasible","answer":{"matching":[["1","A"],["2","B"],["3","C"]]},"certificate":{}}
+{"instance_id":"matching-shift-001-d","verdict":"optimal","answer":{"matching":[["1","A"],["2","B"],["3","C"]]},"certificate":{"minimum_vertex_cover":{"left":[],"right":["A","B","C"]}}}

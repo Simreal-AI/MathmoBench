@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "benchmark": "constraint-shift-math",
+  "family_id": "packing-incompatibility-001",
+  "title": "Two-bin boundary created by a pairwise-incompatible triple",
+  "domain": "packing",
+  "track": "public_dev",
+  "generator": {
+    "id": "bin-packing-phase-templates",
+    "version": "1.0.0",
+    "template": "packing-incompatibility-001"
+  },
+  "submission_contract": {
+    "top_level_fields": [
+      "instance_id",
+      "verdict",
+      "answer",
+      "certificate"
+    ],
+    "indexing": "zero_based",
+    "classify_feasible": {
+      "verdict": "feasible",
+      "answer": {
+        "bins": [
+          [
+            "item index"
+          ]
+        ]
+      },
+      "certificate": {}
+    },
+    "classify_infeasible": {
+      "verdict": "infeasible",
+      "answer": {},
+      "certificate_one_of": [
+        {
+          "type": "total_capacity"
+        },
+        {
+          "type": "incompatible_items",
+          "indices": [
+            "pairwise incompatible item index"
+          ]
+        }
+      ]
+    },
+    "optimize": {
+      "verdict": "optimal",
+      "answer": {
+        "bins": [
+          [
+            "item index"
+          ]
+        ],
+        "bin_count": "positive integer"
+      },
+      "certificate": "one lower bound above whose value equals bin_count"
+    },
+    "additional_fields": false
+  },
+  "scoring": {
+    "correctness_weight": 70,
+    "all_correct_bonus": 30
+  },
+  "instances": [
+    {
+      "id": "packing-incompatibility-001-a",
+      "variant": "base_feasible",
+      "validator": "bin_packing_v1",
+      "goal": "classify_bin_limit",
+      "statement": "Classify whether all indexed items fit within the bin limit and provide a witness or lower-bound certificate.",
+      "input": {
+        "weights": [
+          5,
+          5,
+          4
+        ],
+        "capacity": 10,
+        "bin_limit": 2
+      }
+    },
+    {
+      "id": "packing-incompatibility-001-b",
+      "variant": "nearby_feasible",
+      "validator": "bin_packing_v1",
+      "goal": "classify_bin_limit",
+      "statement": "Classify whether all indexed items fit within the bin limit and provide a witness or lower-bound certificate.",
+      "input": {
+        "weights": [
+          6,
+          5,
+          4
+        ],
+        "capacity": 10,
+        "bin_limit": 2
+      }
+    },
+    {
+      "id": "packing-incompatibility-001-c",
+      "variant": "boundary_infeasible",
+      "validator": "bin_packing_v1",
+      "goal": "classify_bin_limit",
+      "statement": "Classify whether all indexed items fit within the bin limit and provide a witness or lower-bound certificate.",
+      "input": {
+        "weights": [
+          6,
+          5,
+          6
+        ],
+        "capacity": 10,
+        "bin_limit": 2
+      }
+    },
+    {
+      "id": "packing-incompatibility-001-d",
+      "variant": "optimal_certificate",
+      "validator": "bin_packing_v1",
+      "goal": "minimum_bins",
+      "statement": "Find a minimum-bin packing and provide a lower bound of the same size.",
+      "input": {
+        "weights": [
+          6,
+          5,
+          6
+        ],
+        "capacity": 10,
+        "bin_limit": 2
+      }
+    }
+  ]
+}

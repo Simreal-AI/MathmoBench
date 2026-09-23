@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "benchmark": "constraint-shift-math",
+  "family_id": "matching-shift-001",
+  "title": "Perfect matching under minimal graph changes",
+  "domain": "combinatorics",
+  "track": "public_dev",
+  "generator": {
+    "id": "bipartite-phase-family",
+    "version": "1.0.0",
+    "template": "matching-shift-001"
+  },
+  "submission_contract": {
+    "top_level_fields": [
+      "instance_id",
+      "verdict",
+      "answer",
+      "certificate"
+    ],
+    "classify_feasible": {
+      "verdict": "feasible",
+      "answer": {
+        "matching": [["left vertex", "right vertex"]]
+      },
+      "certificate": {}
+    },
+    "classify_infeasible": {
+      "verdict": "infeasible",
+      "answer": {},
+      "certificate": {
+        "hall_subset": ["left vertex"]
+      }
+    },
+    "optimize": {
+      "verdict": "optimal",
+      "answer": {
+        "matching": [["left vertex", "right vertex"]]
+      },
+      "certificate": {
+        "minimum_vertex_cover": {
+          "left": ["left vertex"],
+          "right": ["right vertex"]
+        }
+      }
+    },
+    "additional_fields": false
+  },
+  "scoring": {
+    "correctness_weight": 70,
+    "all_correct_bonus": 30,
+    "schema_compliance": "fail_closed_diagnostic_only"
+  },
+  "instances": [
+    {
+      "id": "matching-shift-001-a",
+      "variant": "base_feasible",
+      "validator": "bipartite_matching_v1",
+      "goal": "classify_perfect_matching",
+      "statement": "Decide whether the bipartite graph admits a perfect matching. Return a matching witness when it does, or a Hall-subset obstruction when it does not.",
+      "input": {
+        "left": ["1", "2", "3", "4"],
+        "right": ["A", "B", "C", "D"],
+        "edges": [["1", "A"], ["1", "B"], ["2", "A"], ["2", "B"], ["3", "B"], ["3", "C"], ["4", "C"], ["4", "D"]]
+      }
+    },
+    {
+      "id": "matching-shift-001-b",
+      "variant": "nearby_feasible",
+      "validator": "bipartite_matching_v1",
+      "goal": "classify_perfect_matching",
+      "statement": "Decide whether the bipartite graph admits a perfect matching. Return a matching witness when it does, or a Hall-subset obstruction when it does not.",
+      "input": {
+        "left": ["1", "2", "3", "4"],
+        "right": ["A", "B", "C", "D"],
+        "edges": [["1", "A"], ["1", "B"], ["2", "A"], ["2", "B"], ["3", "C"], ["4", "C"], ["4", "D"]]
+      }
+    },
+    {
+      "id": "matching-shift-001-c",
+      "variant": "boundary_infeasible",
+      "validator": "bipartite_matching_v1",
+      "goal": "classify_perfect_matching",
+      "statement": "Decide whether the bipartite graph admits a perfect matching. Return a matching witness when it does, or a Hall-subset obstruction when it does not.",
+      "input": {
+        "left": ["1", "2", "3", "4"],
+        "right": ["A", "B", "C", "D"],
+        "edges": [["1", "A"], ["1", "B"], ["2", "A"], ["2", "B"], ["3", "C"], ["4", "C"]]
+      }
+    },
+    {
+      "id": "matching-shift-001-d",
+      "variant": "optimal_certificate",
+      "validator": "bipartite_matching_v1",
+      "goal": "maximum_matching",
+      "statement": "Find a maximum matching and certify optimality with a minimum vertex cover of equal size.",
+      "input": {
+        "left": ["1", "2", "3", "4"],
+        "right": ["A", "B", "C", "D"],
+        "edges": [["1", "A"], ["1", "B"], ["2", "A"], ["2", "B"], ["3", "C"], ["4", "C"]]
+      }
+    }
+  ]
+}

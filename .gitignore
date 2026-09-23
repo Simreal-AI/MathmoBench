@@ -1,0 +1,15 @@
+__pycache__/
+*.py[co]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+# Local run artifacts (agent views, bindings, submissions, receipts)
+run/
+# Operator-only assets must never be committed
+examples/private/
+*binding*.json

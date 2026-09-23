@@ -1,0 +1,79 @@
+{
+  "agent_visible": true,
+  "benchmark": "constraint-shift-math",
+  "bundle_role": "public_source",
+  "included_tracks": [
+    "public_dev"
+  ],
+  "package_manifest": "MANIFEST.sha256",
+  "release_catalog_sha256": "785daeb144fc397dce5dc35631df9bef508fc151f295f6d55ce5c43bfc161d49",
+  "release_id": "mathmobench-v0.2.0",
+  "release_protocol_sha256": "b435aee07f613264319e719db73aeee2b71846f9c803711572e4cb764d1880d0",
+  "schema_version": 1,
+  "source_catalog_sha256": "fd17f9f7e9534991a4b0073b7ea46695d9d457eb81806e18e9a11aadedf36bc7",
+  "source_protocol_sha256": "b3ad6df6a90f5b97f8c5475b12f4954b05c6280076f51a0399bd54eb7d68bf96",
+  "tasks": [
+    {
+      "contract_path": "tasks/math/coloring-clique-completion-001/family.json",
+      "contract_sha256": "ccf849d1c9b7c87d5ae7022696ea3ae6d4e7b9ead2a3965c447a11930774eab7",
+      "id": "coloring-clique-completion-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/coloring-odd-cycle-closure-001/family.json",
+      "contract_sha256": "2aca0cac83d3a6645d91918babba55570786b8309993fb5c73433c13886479ae",
+      "id": "coloring-odd-cycle-closure-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/coloring-odd-wheel-closure-001/family.json",
+      "contract_sha256": "13449b045a657ffea1da66c8775a8444c9b185d8bd866c11e588d77db69328ca",
+      "id": "coloring-odd-wheel-closure-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/matching-shift-001/family.json",
+      "contract_sha256": "c85fbd0a0d10419e5196a85f024e8f24df1c389bc4a8198550afa942b170d708",
+      "id": "matching-shift-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/packing-balanced-load-001/family.json",
+      "contract_sha256": "7794fc9cd3cc9c65ee3ddd1197d8310bad37af46b68754093ac16f4abed6656d",
+      "id": "packing-balanced-load-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/packing-incompatibility-001/family.json",
+      "contract_sha256": "ef59ed1f91d96bccaae4d5efb7cf79047054445f36482be3e4b0a46d60536cc2",
+      "id": "packing-incompatibility-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/packing-total-capacity-001/family.json",
+      "contract_sha256": "d4d0fa337371ad555ddf138bb9134aef3fd34aeae51ee3f166f0a9320dc349eb",
+      "id": "packing-total-capacity-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/subset-modular-break-001/family.json",
+      "contract_sha256": "4077ed331b7afca209fb8e2040b66e5616f3a8fc230a251dbe64b25ece6bdb47",
+      "id": "subset-modular-break-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/subset-pair-pivot-001/family.json",
+      "contract_sha256": "98c2ff13607491dfc019c2c5d2eabc6550e1a48e1180337d6df108b84363e429",
+      "id": "subset-pair-pivot-001",
+      "tree_files": 1
+    },
+    {
+      "contract_path": "tasks/math/subset-superincreasing-gap-001/family.json",
+      "contract_sha256": "f9dc102b51754500a553f7490dba04614f84cb27111636e06ed55609bdba0c54",
+      "id": "subset-superincreasing-gap-001",
+      "tree_files": 1
+    }
+  ],
+  "verification_entrypoint": "verify.py",
+  "version": "0.2.0"
+}

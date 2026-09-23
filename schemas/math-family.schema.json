@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/math-family.schema.json",
+  "title": "Constraint-Shift Math Family",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "benchmark",
+    "family_id",
+    "title",
+    "domain",
+    "track",
+    "generator",
+    "submission_contract",
+    "scoring",
+    "instances"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "benchmark": {"const": "constraint-shift-math"},
+    "family_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "domain": {"type": "string", "minLength": 1},
+    "track": {"enum": ["public_dev", "static_hidden", "fresh_private", "retired"]},
+    "generator": {
+      "type": "object",
+      "required": ["id", "version"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "submission_contract": {"type": "object", "minProperties": 1},
+    "scoring": {
+      "type": "object",
+      "required": ["correctness_weight", "all_correct_bonus"],
+      "properties": {
+        "correctness_weight": {"type": "number", "minimum": 0},
+        "all_correct_bonus": {"type": "number", "minimum": 0}
+      }
+    },
+    "instances": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "variant", "validator", "goal", "statement", "input"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "variant": {"type": "string", "minLength": 1},
+          "validator": {"type": "string", "minLength": 1},
+          "goal": {"type": "string", "minLength": 1},
+          "statement": {"type": "string", "minLength": 1},
+          "input": {"type": "object"}
+        }
+      }
+    }
+  }
+}

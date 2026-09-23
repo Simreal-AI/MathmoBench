@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "benchmark": "constraint-shift-math",
+  "family_id": "coloring-odd-cycle-closure-001",
+  "title": "Two-coloring boundary formed by closing an odd cycle",
+  "domain": "graph_theory",
+  "track": "public_dev",
+  "generator": {
+    "id": "coloring-phase-templates",
+    "version": "1.0.0",
+    "template": "coloring-odd-cycle-closure-001"
+  },
+  "submission_contract": {
+    "top_level_fields": [
+      "instance_id",
+      "verdict",
+      "answer",
+      "certificate"
+    ],
+    "classify_feasible": {
+      "verdict": "feasible",
+      "answer": {
+        "coloring": {
+          "vertex": "integer in 1..k"
+        }
+      },
+      "certificate": {}
+    },
+    "classify_infeasible": {
+      "verdict": "infeasible",
+      "answer": {},
+      "certificate_one_of": [
+        {
+          "type": "clique",
+          "vertices": [
+            "vertex"
+          ]
+        },
+        {
+          "type": "odd_cycle",
+          "cycle": [
+            "cyclically ordered vertex"
+          ]
+        },
+        {
+          "type": "odd_wheel",
+          "hub": "vertex",
+          "rim": [
+            "cyclically ordered vertex"
+          ]
+        }
+      ]
+    },
+    "optimize": {
+      "verdict": "optimal",
+      "answer": {
+        "coloring": {
+          "vertex": "integer"
+        },
+        "colors_used": "positive integer"
+      },
+      "certificate": "one obstruction above whose lower bound equals colors_used"
+    },
+    "additional_fields": false
+  },
+  "scoring": {
+    "correctness_weight": 70,
+    "all_correct_bonus": 30
+  },
+  "instances": [
+    {
+      "id": "coloring-odd-cycle-closure-001-a",
+      "variant": "base_feasible",
+      "validator": "graph_coloring_v1",
+      "goal": "classify_k_coloring",
+      "statement": "Classify k-colorability and return either a coloring or the specified structural obstruction.",
+      "input": {
+        "vertices": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "edges": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ]
+        ],
+        "k": 2
+      }
+    },
+    {
+      "id": "coloring-odd-cycle-closure-001-b",
+      "variant": "nearby_feasible",
+      "validator": "graph_coloring_v1",
+      "goal": "classify_k_coloring",
+      "statement": "Classify k-colorability and return either a coloring or the specified structural obstruction.",
+      "input": {
+        "vertices": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "edges": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "4"
+          ]
+        ],
+        "k": 2
+      }
+    },
+    {
+      "id": "coloring-odd-cycle-closure-001-c",
+      "variant": "boundary_infeasible",
+      "validator": "graph_coloring_v1",
+      "goal": "classify_k_coloring",
+      "statement": "Classify k-colorability and return either a coloring or the specified structural obstruction.",
+      "input": {
+        "vertices": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "edges": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "4"
+          ],
+          [
+            "4",
+            "0"
+          ]
+        ],
+        "k": 2
+      }
+    },
+    {
+      "id": "coloring-odd-cycle-closure-001-d",
+      "variant": "optimal_certificate",
+      "validator": "graph_coloring_v1",
+      "goal": "minimum_coloring",
+      "statement": "Find a minimum coloring and certify a matching structural lower bound.",
+      "input": {
+        "vertices": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "edges": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "4"
+          ],
+          [
+            "4",
+            "0"
+          ]
+        ],
+        "k": 2
+      }
+    }
+  ]
+}
