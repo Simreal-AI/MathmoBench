@@ -2,6 +2,13 @@
 
 [![CI](https://github.com/Simreal-AI/MathmoBench/actions/workflows/ci.yml/badge.svg)](https://github.com/Simreal-AI/MathmoBench/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Status: public preview](https://img.shields.io/badge/status-public%20preview-34d399)](https://github.com/Simreal-AI)
+
+> **Public preview · 公开预览版.** This repository is the open, minimal slice of MathmoBench: the grader, the validators, the agent-view projection, one randomized generator and ten development families. Hidden tracks (tasks, seeds and reference answers) are run by SimReal and are not in this repository. It is early and will change.
+>
+> 本仓库是 MathmoBench 的最小公开切片：评测器、验证器、agent 视图工具、一个随机题生成器和 10 个开发题族。隐藏轨道（题目、种子、参考答案）由 SimReal 运营，不在本仓库中。项目处于早期，会持续变化。
+>
+> Partner access · 合作接入: [business@simreal.co](mailto:business@simreal.co) · [github.com/Simreal-AI](https://github.com/Simreal-AI)
 
 [中文](#中文) | [English](#english)
 
@@ -95,6 +102,10 @@ python -m mathbench.cli run/family.json run/submission.jsonl --binding run/bindi
 JSONL with exactly `instance_id`, `verdict`, `answer`, and `certificate` per line; per-goal shapes are in the agent view's `goal_contracts`.
 
 Family score = 70 × per-instance accuracy + 30 × whole-family strict pass. Malformed instances score zero; unknown, duplicate, or missing IDs zero the family with a receipt. `configs/protocol.json` is the single source of truth for scoring policy.
+
+## Part of SimReal
+
+This repository is one public preview in the [SimReal](https://simreal.co) product line: environments where AI agents act and real outcomes decide the score. See every preview at [github.com/Simreal-AI](https://github.com/Simreal-AI).
 
 ## Integrity
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+- README marks the repository as a public preview and states what is open
+  (grader, validators, projection, generator, dev families) and what SimReal
+  runs privately (hidden tracks). No code or scoring changes.
+
 ## 0.2.0
 
 ### Added
